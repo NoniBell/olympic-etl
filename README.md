@@ -20,7 +20,7 @@
   * Remove cols: ‘Indicator Name’, ‘Indicator Code’, ‘1960’, ‘2020’
 
 ## Relational or Non-relational Database:
-Relationsl - PostgreSQL
+Relational - PostgreSQL
 
 ## Final Tables/Collections:
 * Add metadata (region, income group) from World Bank Dataset to GDP data
