@@ -13,23 +13,23 @@ All of the data sets were originally formatted in CSV files which we read into J
 ## **T**ransform
 Steps for data transformation are listed below for each dataset. Code for the transformations can be found in their corresponding Jupyter notebooks.
 
-### [Guardian Transformation](Data/Guardian_Files)
+### [Guardian Transformation](data/Guardian_Files)
 * Add season column (summer or winter) to summer and winter data
 * Merge summer and winter data
 * Sort combined dataset by year
 * Remove commas from Athlete and Event columns
 
-### [Medals Transformation](Data/Medals_Files)
+### [Medals Transformation](data/Medals_Files)
 * Split country column from ioc column, put into new df
 * Replace original country/code df columns with new df columns
 * Strip parentheses from around country code
 
-### [World Bank Transformation](Data/World_Bank_Files)
+### [World Bank Transformation](data/World_Bank_Files)
 * Remove first 4 rows (header)
 * Drop columns ‘Indicator Name’, ‘Indicator Code’, ‘1960’, ‘2020’
 * Rename columns
 
-### [Regional Metadata Transformation](Data/World_Bank_Files)
+### [Regional Metadata Transformation](data/World_Bank_Files)
 * Rename columns to be able to join with World Bank data
 
 ## **L**oad
