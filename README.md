@@ -1,16 +1,16 @@
-# ETL Project
+# ETL Project 🏅🌎
 
-## Extract
-For this project, group Olympians used the following datasets:
-* [Olympic Sports and Medals, 1896-2014 (Guardian)](https://www.kaggle.com/the-guardian/olympic-games?select=dictionary.csv) Source: Kaggle
+## **E**xtract
+For this project, group **Olympians** used the following datasets:
+* [Olympic Sports and Medals, 1896-2014 (Guardian)](https://www.kaggle.com/the-guardian/olympic-games?select=dictionary.csv) Source: *Kaggle*
 
-* [Olympic Games Medal Dataset (from 1896 to 2018)](https://www.kaggle.com/rushikeshlavate/olympic-games-medal-datasetfrom-1896-to-2018) Source: Kaggle
+* [Olympic Games Medal Dataset (from 1896 to 2018)](https://www.kaggle.com/rushikeshlavate/olympic-games-medal-datasetfrom-1896-to-2018) Source: *Kaggle*
 
-* [The World Bank Data: BDP growth (annual %)](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?end=1990&most_recent_year_desc=true&start=1990&view=map&year=1961) Source: The World Bank Open Data Source
+* [The World Bank Data: BDP growth (annual %)](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?end=1990&most_recent_year_desc=true&start=1990&view=map&year=1961) Source: *The World Bank Open Data Source*
 
 All of the data sets were originally formatted in CSV files which we read into Jupyter Lab for transformation.
 
-## Transform
+## **T**ransform
 Steps for data transformation are listed below for each dataset. Code for the transformations can be found in their corresponding Jupyter notebooks.
 
 ### Guardian Transformation
@@ -32,7 +32,7 @@ Steps for data transformation are listed below for each dataset. Code for the tr
 ### Regional Metadata Transformation
 * Rename columns to be able to join with World Bank data
 
-## Load
+## **L**oad
 Our group decided to load our cleaned data into [PostgreSQL](https://www.postgresql.org/) because it is a relational database. Because our data is structured and can be represented in a tabular format with schemas that are clearly defined, a relational database is the best choice for data storage. Each data source can be joined on country code attribute (`world_gdp.country_code`, `regional_info.country_code`, `game_medals.code`, `athlete_medals.country`).
 
 Our final tables include:
