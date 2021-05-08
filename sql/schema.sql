@@ -1,27 +1,40 @@
-DROP TABLE world_gdp;
-DROP TABLE regional_info;
 DROP TABLE game_medals;
 DROP TABLE athlete_medals;
+DROP TABLE world_gdp;
+DROP TABLE regional_info;
 
 CREATE TABLE game_medals(
-	Country VARCHAR(255),
-	Code VARCHAR(255),
-	summer_rank INT, 
-	s_gold INT, 
-	s_silver INT, 
-	s_bronze INT,
-    summer_total INT, 
-	winter_rank INT, 
-	w_gold INT, 
-	w_silver INT, 
-	w_bronze INT,
-    winter_total INT, 
-	overall_rank INT, 
-	total_gold INT, 
-	total_silver INT,
-    total_bronze INT, 
-	total_medals INT,
-	PRIMARY KEY (Code)
+  Country VARCHAR(255),
+  Code VARCHAR(255),
+  summer_rank INT, 
+  s_gold INT, 
+  s_silver INT, 
+  s_bronze INT,
+  summer_total INT, 
+  winter_rank INT, 
+  w_gold INT, 
+  w_silver INT, 
+  w_bronze INT,
+  winter_total INT, 
+  overall_rank INT, 
+  total_gold INT, 
+  total_silver INT,
+  total_bronze INT, 
+  total_medals INT,
+  PRIMARY KEY (Code)
+);
+
+
+CREATE TABLE athlete_medals (
+  Year INT,
+  City VARCHAR(255),
+  Sport VARCHAR(255),
+  Discipline VARCHAR(255),
+  Athlete VARCHAR(255),
+  Country VARCHAR(255),
+  Gender VARCHAR(255),
+  Event VARCHAR(255),
+  Season VARCHAR(255)
 );
 
 CREATE TABLE world_gdp (
@@ -97,16 +110,3 @@ CREATE TABLE regional_info (
 	country_name VARCHAR(255),
 	PRIMARY KEY (country_code)
 );
-
-CREATE TABLE athlete_medals (
-    Year INT,
-    City VARCHAR(255),
-    Sport VARCHAR(255),
-    Discipline VARCHAR(255),
-    Athlete VARCHAR(255),
-    Country VARCHAR(255),
-    Gender VARCHAR(255),
-    Event VARCHAR(255),
-    Season VARCHAR(255)
-);
-    
