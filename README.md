@@ -26,8 +26,6 @@
   * Note: Games/Medal Dataset is the sum of all medals earned by a country from 1896 to 2018
 * Join Guardian Olympic Data with GDP by country code
 
-<hr>
-
 ## Project Report
 
 'The report will describe the following'
