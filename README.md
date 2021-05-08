@@ -8,10 +8,10 @@ For this project, group Olympians used the following datasets:
 
 * [The World Bank Data: BDP growth (annual %)](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?end=1990&most_recent_year_desc=true&start=1990&view=map&year=1961) Source: The World Bank Open Data Source
 
-All of the data sets were originally formatted in csv files which we read into Jupyter Lab for transformation.
+All of the data sets were originally formatted in CSV files which we read into Jupyter Lab for transformation.
 
 ## Transform
-Steps for data transformation of each dataset are listed below. Code for the transformations can be found in their corresponding Jupyter notebook.
+Steps for data transformation are listed below for each dataset. Code for the transformations can be found in their corresponding Jupyter notebooks.
 
 ### Guardian Transformation
 * Add season column (summer or winter) to summer and winter data
@@ -44,10 +44,10 @@ Our final tables include:
 
 * **athlete_medals** included cleaned data from Kaggle Guardian Olympic Sports and Medals, 1896-2014 (olympic year, olympic city, country code, athlete’s name, sport, event, discipline, medal, and gender)
 
-See the [schema.sql](schema.sql) for the SQL code to create each table.
+See [schema.sql](schema.sql) for the SQL code to create each table.
 
 ### Example Queries
-* Filter `region_info` table by income type (high income, upper middle income, low income, etc.)
+* Filter the `regional_info` table by income type (high income, upper middle income, low income, etc.).
 ```sql
 SELECT regional_info.country_code, regional_info.income_Group 
 FROM regional_info 
@@ -55,22 +55,23 @@ WHERE regional_info.income_Group = 'High income';
 ```
 ![dude](screenshots/filter_region_by_income_type.png)
 
-* Filter `world_gdp` table for gdp values in a specific year and between a specific range
+* Filter the `world_gdp` table for gdp values in a specific year and between a specific range.
 ```sql
 SELECT country_name, country_code, year_2019 FROM world_gdp
 WHERE year_2019 > 0 AND year_2019 < 3;
 ```
 ![world_gdp table filtered by year and range](screenshots/filter_gdp_by_year_and_range.png)
 
-* Query a single athlete’s medals and see their country's gdp growth that year
+* Join `athlete_medals` data with `regional_info` data.
+```sql›
+SELECT Athlete Sport, country_name, income_Group
+FROM athlete_medals AS a
+Join regional_info AS r
+ON a.Country = r.country_code;
 ```
-SELECT
-FROM
-WHERE
-```
-![screenshot](screenshots/screenshot.png)
+![join athlete and regional](screenshots/join_athlete_and_regional.png)
 
-* Join regional data from World Bank Dataset to GDP data
+* Join `regional-info` data from World Bank Dataset with GDP data from `world_gdp`.
 ```sql
 SELECT regional_info.country_code, regional_info.income_Group, world_gdp.year_2018, world_gdp.year_2019
 FROM world_gdp
@@ -78,32 +79,3 @@ INNER JOIN regional_info ON
 regional_info.country_code=world_gdp.country_code;
 ```
 ![join regional and gdp data](screenshots/join_regional_and_gdp.png)
-
-
-* Join Guardian and Games/Medal Dataset to have data from 1896-2018
-Note: Games/Medal Dataset is the sum of all medals earned by a country from 1896 to 2018
-
-
-
-
-
-
-
-
-### Type of production database
-[PostgreSQL](https://www.postgresql.org/) (Relational database)
-
-### Final Tables/Collections:
-* Add metadata (region, income group) from World Bank Dataset to GDP data
-* Join Guardian and Games/Medal Dataset to have data from 1896-2018
-  * Note: Games/Medal Dataset is the sum of all medals earned by a country from 1896 to 2018
-* Join Guardian Olympic Data with GDP by country code
-
-## Project Report
-
-'The report will describe the following'
-* **E**xtract: your original data sources and how the data was formatted (CSV, JSON, pgAdmin 4, etc).
-
-* **T**ransform: what data cleaning or transformation was required.
-
-* **L**oad: the final database, tables/collections, and why this was chosen.
