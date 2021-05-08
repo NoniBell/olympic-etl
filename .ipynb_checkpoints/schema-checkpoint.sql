@@ -1,7 +1,6 @@
 DROP TABLE world_gdp;
 DROP TABLE regional_info;
 DROP TABLE game_medals;
-DROP TABLE athlete_medals;
 
 CREATE TABLE game_medals(
 	Country VARCHAR(255),
@@ -97,16 +96,3 @@ CREATE TABLE regional_info (
 	country_name VARCHAR(255),
 	PRIMARY KEY (country_code)
 );
-
-CREATE TABLE athlete_medals (
-    Year INT,
-    City VARCHAR(255),
-    Sport VARCHAR(255),
-    Discipline VARCHAR(255),
-    Athlete VARCHAR(255),
-    Country VARCHAR(255),
-    Gender VARCHAR(255),
-    Event VARCHAR(255),
-    Season VARCHAR(255)
-);
-    
