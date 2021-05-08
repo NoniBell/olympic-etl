@@ -63,8 +63,8 @@ WHERE year_2019 > 0 AND year_2019 < 3;
 ![world_gdp table filtered by year and range](screenshots/filter_gdp_by_year_and_range.png)
 
 * Join `athlete_medals` data with `regional_info` data.
-```sql›
-SELECT Athlete Sport, country_name, income_Group
+```sql
+SELECT Sport, country_name, income_Group
 FROM athlete_medals AS a
 Join regional_info AS r
 ON a.Country = r.country_code;
