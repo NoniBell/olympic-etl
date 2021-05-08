@@ -66,10 +66,18 @@ WHERE year_2019 > 0 AND year_2019 < 3;
 ```sql
 SELECT Sport, country_name, income_Group
 FROM athlete_medals AS a
-Join regional_info AS r
+JOIN regional_info AS r
 ON a.Country = r.country_code;
 ```
 ![join athlete and regional](screenshots/join_athlete_and_regional.png)
+
+* Join `athlete_medals` data with `world_gdp` data.
+```sql
+SELECT year_1999 as "GDP growth 1999", country_name, Athlete, Medal
+FROM athlete_medals AS a
+JOIN world_gdp AS g
+ON a.Country = g.country_code;
+```
 
 * Join `regional-info` data from World Bank Dataset with GDP data from `world_gdp`.
 ```sql
