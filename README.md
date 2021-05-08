@@ -82,9 +82,7 @@ ON a.Country = r.country_code;
 
 * Join `regional-info` data from World Bank Dataset with GDP data from `world_gdp`.
 ```sql
-SELECT 
-regional_info.country_code, regional_info.income_Group,
-world_gdp.year_2018, world_gdp.year_2019
+SELECT regional_info.country_code, regional_info.income_Group, world_gdp.year_2018, world_gdp.year_2019
 FROM world_gdp
 INNER JOIN regional_info ON
 regional_info.country_code=world_gdp.country_code;
