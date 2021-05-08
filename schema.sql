@@ -93,7 +93,7 @@ CREATE TABLE regional_info (
 	country_code VARCHAR(255), 
 	region VARCHAR(255), 
 	income_Group VARCHAR(255), 
-	special_notes VARCHAR(255), 
+	special_notes VARCHAR(1000), 
 	country_name VARCHAR(255),
 	PRIMARY KEY (country_code)
 );
