@@ -73,15 +73,18 @@ ON a.Country = r.country_code;
 
 * Join `athlete_medals` data with `world_gdp` data.
 ```sql
-SELECT year_1999 as "GDP growth 1999", country_name, Athlete, Medal
+SELECT round(year_1999, 2) as "GDP growth 1999", country_name, Athlete
 FROM athlete_medals AS a
-JOIN world_gdp AS g
-ON a.Country = g.country_code;
+Join world_gdp AS r
+ON a.Country = r.country_code;
 ```
+![join athlete and gdp](screenshots/join_athlete_and_gdp.png)
 
 * Join `regional-info` data from World Bank Dataset with GDP data from `world_gdp`.
 ```sql
-SELECT regional_info.country_code, regional_info.income_Group, world_gdp.year_2018, world_gdp.year_2019
+SELECT 
+regional_info.country_code, regional_info.income_Group,
+world_gdp.year_2018, world_gdp.year_2019
 FROM world_gdp
 INNER JOIN regional_info ON
 regional_info.country_code=world_gdp.country_code;
