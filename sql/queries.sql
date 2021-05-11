@@ -25,7 +25,7 @@ FROM world_gdp
 INNER JOIN regional_info ON
 regional_info.country_code=world_gdp.country_code;
 
-/* Join 'game_medals' data with 'regional_info' dataset to see compare country income with total medals wins. */
+/* Join 'game_medals' data with 'regional_info' dataset to compare country income with total medals wins. */
 SELECT game_medals.code, game_medals.country, game_medals.total_medals, regional_info.income_Group
 FROM game_medals
 INNER JOIN regional_info ON
